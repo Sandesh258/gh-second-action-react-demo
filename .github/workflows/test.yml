@@ -14,3 +14,5 @@ jobs:
               run: npm ci
             - name: Run the testcases
               run: npm test
+            - name: Sneha ko test kra rhe hai 
+              run: echo "hi Sneha"
