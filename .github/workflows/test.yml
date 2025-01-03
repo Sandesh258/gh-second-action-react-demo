@@ -1,4 +1,4 @@
-name: Test Project
+name: Test and Deploy Project
 on: push
 jobs: 
     test:
@@ -16,3 +16,18 @@ jobs:
               run: npm test
             - name: Sneha ko test kra rhe hai 
               run: echo "hi Sneha"
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get code 
+              uses: actions/checkout@v3
+            - name: Install Node.js
+              uses: actions/setup-node@v3
+              with:
+                node-version: 22
+            - name: Install Dependencies
+              run: npm ci
+            - name: Build the project now
+              run: npm run build
+            - name: Deploying now
+              run: echo "Deploying now ..."
