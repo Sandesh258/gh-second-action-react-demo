@@ -17,6 +17,7 @@ jobs:
             - name: Sneha ko test kra rhe hai 
               run: echo "hi Sneha"
     deploy:
+        needs: test
         runs-on: ubuntu-latest
         steps:
             - name: Get code 
